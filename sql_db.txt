@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS pkl_system;
+
+USE pkl_system;
+
+CREATE TABLE IF NOT EXISTS absen (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    siswa_id INT NOT NULL,
+    jenis_absen ENUM('masuk', 'pulang') NOT NULL,
+    waktu TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS jurnal (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    siswa_id INT NOT NULL,
+    tema VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    foto VARCHAR(255),
+    waktu TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
